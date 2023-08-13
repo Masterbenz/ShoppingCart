@@ -2,24 +2,43 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-dt/css/jquery.dataTables.min.css";
+
+import { Routes , Route } from "react-router-dom"
+import { Container } from "react-bootstrap"
+import { Home } from './pages/Home'
+import { Store } from './pages/Store'
+import { About } from './pages/About'
+import { Navbar } from './component/Navbar'
+import { Sidebar } from './component/Sidebar'
+import  AdminStore  from './pages/Admin/Store'
+import { ShoppingCartProvider } from './content/ShoppingCartContent';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <>
+  
+    <ShoppingCartProvider>
+    <Navbar />
+   
+   
+    
+    <div style={{display:'flex' , flexDirection:'row'}}>
+    <Sidebar />
+    <Container className="mb-4">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/AdminStore" element={<AdminStore/>} />
+      </Routes>
+    </Container>
     </div>
+
+ 
+    </ShoppingCartProvider>
+  
+  </>
   );
 }
 
