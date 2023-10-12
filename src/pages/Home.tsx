@@ -1,5 +1,6 @@
 import React from 'react'
 import { Person } from '../interface/Car';
+import { Slick } from '../component/Slick'
 
 
 export function Home () {
@@ -10,8 +11,8 @@ export function Home () {
 
     return (
         <div >
-                <h1>{person.name}</h1>
-                <h2>{person.country}</h2>
+                <Slick/>
+              
         </div>
     )
 }

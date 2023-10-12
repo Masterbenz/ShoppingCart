@@ -16,5 +16,10 @@ code {
   color : red;
 }
 
+nav .navbar-nav li a{
+  color: white !important;
+  }
+
+
 
 
